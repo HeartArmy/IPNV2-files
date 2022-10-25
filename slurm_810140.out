@@ -1,0 +1,31 @@
+----------------- Options ---------------
+               batch_size: 2                             
+               block_size: [160, 100, 100]               
+                 channels: 64                            
+                data_size: [640, 400, 400]               
+                 dataroot: /scratch/maj596/IPN-OCTA-Segmentation/Data/train
+              feature_dir: /scratch/maj596/IPN-OCTA-Segmentation/IPN2_pytorch/logs/Features_V2
+                  gpu_ids: 0                             
+              in_channels: 2                             
+                     load: False                         
+                       lr: 0.0001                        
+            max_iteration: 30001                         
+       max_iteration_post: 5001                          
+                   method: IPN_V2                        
+        modality_filename: ['image1', 'image2', 'label'] 
+                     mode: train                         
+                n_classes: 2                             
+                optimizer: Adam                          
+         plane_perceptron: UNet                          
+plane_perceptron_channels: 64                            
+            save_interval: 500                           
+       save_interval_post: 50                            
+                 saveroot: /scratch/maj596/IPN-OCTA-Segmentation/IPN2_pytorch/logs
+                 test_ids: [200, 300]                    
+                train_ids: [0, 180]                      
+                  val_ids: [180, 200]                    
+----------------- End -------------------
+
+Start Setup dataset reader
+Setting up dataset reader
+found pickle !!!

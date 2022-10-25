@@ -1,0 +1,63 @@
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+INFO: Using device cuda
+----------------- Options ---------------
+               batch_size: 2                             
+               block_size: [160, 100, 100]               
+                 channels: 64                            
+                data_size: [640, 400, 400]               
+                 dataroot: /scratch/maj596/IPN-OCTA-Segmentation/Data/train
+              feature_dir: /scratch/maj596/IPN-OCTA-Segmentation/IPN2_pytorch/logs/Features_V2
+                  gpu_ids: 0                             
+              in_channels: 2                             
+                     load: False                         
+                       lr: 0.0001                        
+            max_iteration: 30001                         
+       max_iteration_post: 5001                          
+                   method: IPN_V2                        
+        modality_filename: ['image1', 'image2', 'label'] 
+                     mode: train                         
+                n_classes: 2                             
+                optimizer: Adam                          
+         plane_perceptron: UNet                          
+plane_perceptron_channels: 64                            
+            save_interval: 500                           
+       save_interval_post: 50                            
+                 saveroot: /scratch/maj596/IPN-OCTA-Segmentation/IPN2_pytorch/logs
+                 test_ids: [200, 300]                    
+                train_ids: [0, 180]                      
+                  val_ids: [180, 200]                    
+----------------- End -------------------
+
+Start Setup dataset reader
+Setting up dataset reader
+picking ...It will take some minutes
+Traceback (most recent call last):
+  File "IPN V2+_train.py", line 124, in <module>
+    train_net(net=net,device=device)
+  File "IPN V2+_train.py", line 32, in train_net
+    train_dataset_reader = BatchDataReader.BatchDatset_post(train_records, opt.data_size, opt.channels, opt.batch_size, train_num, opt.saveroot)
+  File "/scratch/maj596/github/IPNV2_pytorch/data_process/BatchDataReader.py", line 133, in __init__
+    self.read_images()
+  File "/scratch/maj596/github/IPNV2_pytorch/data_process/BatchDataReader.py", line 141, in read_images
+    self.data[:,:,:,i] = np.array(np.load(self.filelist['feature'][ct_num]))
+  File "/scratch/maj596/conda-envs/IPNV2_pytorch/lib/python3.6/site-packages/numpy/lib/npyio.py", line 416, in load
+    fid = stack.enter_context(open(os_fspath(file), "rb"))
+FileNotFoundError: [Errno 2] No such file or directory: '/scratch/maj596/IPN-OCTA-Segmentation/IPN2_pytorch/logs/Features_V2/10001.npy'

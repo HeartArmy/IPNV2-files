@@ -1,0 +1,36 @@
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+/scratch/maj596/conda-envs/AnotherEnv/lib/python3.6/site-packages/torch/package/_directory_reader.py:17: UserWarning: Failed to initialize NumPy: No module named 'numpy.core._multiarray_umath' (Triggered internally at  /opt/conda/conda-bld/pytorch_1634272115665/work/torch/csrc/utils/tensor_numpy.cpp:68.)
+  _dtype_to_storage = {data_type(0).dtype: data_type for data_type in _storages}
+INFO: Using device cuda
+/scratch/maj596/conda-envs/AnotherEnv/lib/python3.6/site-packages/torch/cuda/__init__.py:143: UserWarning: 
+A100-PCIE-40GB with CUDA capability sm_80 is not compatible with the current PyTorch installation.
+The current PyTorch install supports CUDA capabilities sm_37 sm_50 sm_60 sm_61 sm_70 sm_75 compute_37.
+If you want to use the A100-PCIE-40GB GPU with PyTorch, please check the instructions at https://pytorch.org/get-started/locally/
+
+  warnings.warn(incompatible_device_warn.format(device_name, capability, " ".join(arch_list), device_name))
+Traceback (most recent call last):
+  File "IPN V2_train.py", line 142, in <module>
+    train_net(net=net,device=device)
+  File "IPN V2_train.py", line 49, in train_net
+    train_images, train_annotations = train_dataset_reader.read_batch_random_train()
+  File "/scratch/maj596/github/IPNV2_pytorch/data_process/BatchDataReader.py", line 89, in read_batch_random_train
+    image = torch.from_numpy(self.images)
+RuntimeError: Numpy is not available

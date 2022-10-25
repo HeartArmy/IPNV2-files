@@ -1,0 +1,25 @@
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+/scratch/maj596/conda-envs/IPNV2_pytorch/lib/python3.6/site-packages/torch/package/_directory_reader.py:17: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at  /opt/conda/conda-bld/pytorch_1640811748419/work/torch/csrc/utils/tensor_numpy.cpp:68.)
+  _dtype_to_storage = {data_type(0).dtype: data_type for data_type in _storages}
+Traceback (most recent call last):
+  File "IPN V2_train.py", line 3, in <module>
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'

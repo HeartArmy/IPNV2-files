@@ -1,0 +1,52 @@
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+INFO: Using device cuda
+/scratch/maj596/conda-envs/IPNV2_pytorch/lib/python3.6/site-packages/torch/cuda/__init__.py:125: UserWarning: 
+A100-PCIE-40GB with CUDA capability sm_80 is not compatible with the current PyTorch installation.
+The current PyTorch install supports CUDA capabilities sm_37 sm_50 sm_60 sm_61 sm_70 sm_75 compute_37.
+If you want to use the A100-PCIE-40GB GPU with PyTorch, please check the instructions at https://pytorch.org/get-started/locally/
+
+  warnings.warn(incompatible_device_warn.format(device_name, capability, " ".join(arch_list), device_name))
+Traceback (most recent call last):
+  File "IPN V2_train.py", line 142, in <module>
+    train_net(net=net,device=device)
+  File "IPN V2_train.py", line 59, in train_net
+    pred,_= net(train_images)
+  File "/scratch/maj596/conda-envs/IPNV2_pytorch/lib/python3.6/site-packages/torch/nn/modules/module.py", line 722, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/scratch/maj596/conda-envs/IPNV2_pytorch/lib/python3.6/site-packages/torch/nn/parallel/data_parallel.py", line 153, in forward
+    return self.module(*inputs[0], **kwargs[0])
+  File "/scratch/maj596/conda-envs/IPNV2_pytorch/lib/python3.6/site-packages/torch/nn/modules/module.py", line 722, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/scratch/maj596/github/IPNV2_pytorch/model.py", line 170, in forward
+    x0 = self.input3d(x0)
+  File "/scratch/maj596/conda-envs/IPNV2_pytorch/lib/python3.6/site-packages/torch/nn/modules/module.py", line 722, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/scratch/maj596/github/IPNV2_pytorch/model.py", line 188, in forward
+    return self.in_conv(x)
+  File "/scratch/maj596/conda-envs/IPNV2_pytorch/lib/python3.6/site-packages/torch/nn/modules/module.py", line 722, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/scratch/maj596/conda-envs/IPNV2_pytorch/lib/python3.6/site-packages/torch/nn/modules/container.py", line 117, in forward
+    input = module(input)
+  File "/scratch/maj596/conda-envs/IPNV2_pytorch/lib/python3.6/site-packages/torch/nn/modules/module.py", line 722, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/scratch/maj596/conda-envs/IPNV2_pytorch/lib/python3.6/site-packages/torch/nn/modules/conv.py", line 567, in forward
+    self.padding, self.dilation, self.groups)
+RuntimeError: Unable to find a valid cuDNN algorithm to run convolution
